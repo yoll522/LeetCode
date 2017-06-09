@@ -1,28 +1,21 @@
 
 public class Solution {
 	
-//    public int findComplement(int num) {
-//        return ~num & ((Integer.highestOneBit(num) << 1) - 1);
-//    }
-	
-    public int findComplement(int num) 
-    {
-        int i = 0;
-        int j = 0;
-        
-        while (i < num)
-        {
-            i += Math.pow(2, j);
-            j++;
+    public int findComplement(int num) {
+    	int complement = 0 ;
+        for(int i = 1 ; complement < num ; i = i << 1){
+        	complement += i;
+        	
         }
-        
-        return i - num;
+
+    	return complement - num;
     }
     
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Solution solution = new Solution();
-		System.out.println(solution.findComplement(6));
+		
+		System.out.println(solution.findComplement(2147483647));
 	}
 
 }
